@@ -6,30 +6,9 @@
 	objectVersion = 50;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		3776781223E7A1B300E1296F /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3776781123E7A1B300E1296F /* Step.swift */; };
-		3776781623E7A2BE00E1296F /* TransitionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3776781523E7A2BE00E1296F /* TransitionProtocol.swift */; };
-		3776781823E7A53200E1296F /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3776781723E7A53200E1296F /* Transition.swift */; };
-		3776782323E83A1E00E1296F /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3776782223E83A1E00E1296F /* BaseCoordinator.swift */; };
-		3776782623E83B9D00E1296F /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3776782523E83B9C00E1296F /* Presentable.swift */; };
-		3776782823E83D4400E1296F /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3776782723E83D4400E1296F /* NavigationCoordinator.swift */; };
-		3776782B23E8419400E1296F /* NavigationControllerAnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3776782A23E8419400E1296F /* NavigationControllerAnimationDelegate.swift */; };
-		377BD1D923E430870044465E /* Coordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = 377BD1D723E430870044465E /* Coordinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		377BD1EA23E431160044465E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377BD1E923E431160044465E /* Coordinator.swift */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
-		3776781123E7A1B300E1296F /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
-		3776781523E7A2BE00E1296F /* TransitionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionProtocol.swift; sourceTree = "<group>"; };
-		3776781723E7A53200E1296F /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
-		3776782223E83A1E00E1296F /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
-		3776782523E83B9C00E1296F /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
-		3776782723E83D4400E1296F /* NavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
-		3776782A23E8419400E1296F /* NavigationControllerAnimationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerAnimationDelegate.swift; sourceTree = "<group>"; };
 		377BD1D423E430870044465E /* Coordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Coordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		377BD1D723E430870044465E /* Coordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coordinator.h; sourceTree = "<group>"; };
-		377BD1D823E430870044465E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		377BD1E923E431160044465E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		37C99D6F23E9B42000706B32 /* Coordinator */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Coordinator; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,60 +22,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3776780F23E79F3100E1296F /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Presenter;
-			sourceTree = "<group>";
-		};
-		3776781023E7A1A900E1296F /* Step */ = {
-			isa = PBXGroup;
-			children = (
-				3776781123E7A1B300E1296F /* Step.swift */,
-			);
-			name = Step;
-			sourceTree = "<group>";
-		};
-		3776781323E7A1FC00E1296F /* Coordinators */ = {
-			isa = PBXGroup;
-			children = (
-				377BD1E923E431160044465E /* Coordinator.swift */,
-				3776782223E83A1E00E1296F /* BaseCoordinator.swift */,
-				3776782723E83D4400E1296F /* NavigationCoordinator.swift */,
-			);
-			name = Coordinators;
-			sourceTree = "<group>";
-		};
-		3776781423E7A2B400E1296F /* Transiontion */ = {
-			isa = PBXGroup;
-			children = (
-				3776781523E7A2BE00E1296F /* TransitionProtocol.swift */,
-				3776781723E7A53200E1296F /* Transition.swift */,
-			);
-			name = Transiontion;
-			sourceTree = "<group>";
-		};
-		3776782423E83B8F00E1296F /* Presentable */ = {
-			isa = PBXGroup;
-			children = (
-				3776782523E83B9C00E1296F /* Presentable.swift */,
-			);
-			name = Presentable;
-			sourceTree = "<group>";
-		};
-		3776782923E8415B00E1296F /* AnimationDelegate */ = {
-			isa = PBXGroup;
-			children = (
-				3776782A23E8419400E1296F /* NavigationControllerAnimationDelegate.swift */,
-			);
-			name = AnimationDelegate;
-			sourceTree = "<group>";
-		};
 		377BD1CA23E430870044465E = {
 			isa = PBXGroup;
 			children = (
-				377BD1D623E430870044465E /* Coordinator */,
+				37C99D6F23E9B42000706B32 /* Coordinator */,
 				377BD1D523E430870044465E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -109,21 +38,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		377BD1D623E430870044465E /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				3776782923E8415B00E1296F /* AnimationDelegate */,
-				3776782423E83B8F00E1296F /* Presentable */,
-				3776781423E7A2B400E1296F /* Transiontion */,
-				3776781023E7A1A900E1296F /* Step */,
-				3776780F23E79F3100E1296F /* Presenter */,
-				3776781323E7A1FC00E1296F /* Coordinators */,
-				377BD1D723E430870044465E /* Coordinator.h */,
-				377BD1D823E430870044465E /* Info.plist */,
-			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -131,7 +45,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				377BD1D923E430870044465E /* Coordinator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,14 +117,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3776782323E83A1E00E1296F /* BaseCoordinator.swift in Sources */,
-				3776781223E7A1B300E1296F /* Step.swift in Sources */,
-				3776781623E7A2BE00E1296F /* TransitionProtocol.swift in Sources */,
-				3776781823E7A53200E1296F /* Transition.swift in Sources */,
-				377BD1EA23E431160044465E /* Coordinator.swift in Sources */,
-				3776782B23E8419400E1296F /* NavigationControllerAnimationDelegate.swift in Sources */,
-				3776782623E83B9D00E1296F /* Presentable.swift in Sources */,
-				3776782823E83D4400E1296F /* NavigationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +255,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Coordinator/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -376,6 +282,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Coordinator/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

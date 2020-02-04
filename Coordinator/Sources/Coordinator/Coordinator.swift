@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+public typealias NavigationHandler = () -> Void
+
 public protocol Coordinator: Presentable {
 
     associatedtype StepType = Step
@@ -19,7 +21,7 @@ public protocol Coordinator: Presentable {
 
     //MARRK: - Open
 
-    func transition(for step: StepType) -> Transition<UIViewController>
+//    func transition(for step: StepType) -> Transition<UIViewController>
 
 }
 
