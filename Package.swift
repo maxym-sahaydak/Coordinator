@@ -5,8 +5,11 @@ import PackageDescription
 
 let package = Package(
     name: "Coordinator",
+    platforms: [
+        //Suports only iOS 11 and above
+        .iOS(.v11)
+    ],
     products: [
-        // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
             name: "Coordinator",
             targets: ["Coordinator"]),
