@@ -37,4 +37,12 @@ public struct Transition<RootViewController: UIViewController>: TransitionProtoc
         #warning("autorelease pool")
         self.performClosure(rootViewController, nil, completion)
     }
+
+    // MARK: - Static
+
+    public static func none() -> Transition {
+        return Transition(presentables: []) { (_, _, completion) in
+            completion?()
+        }
+     }
 }
