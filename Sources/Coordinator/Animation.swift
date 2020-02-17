@@ -37,10 +37,12 @@ extension Animation: UIViewControllerTransitioningDelegate {
     }
 
     public func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        #warning("add interaction")
         return nil
     }
 
     public func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        #warning("add interaction")
         return nil
     }
 

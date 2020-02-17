@@ -17,7 +17,7 @@ extension Transition {
     }
 
     public static func presentOverFullScreen(_ presentable: Presentable, animation: Animation? = nil) -> Self {
-        return Transition(presentables: [presentable], animation: animation) { (rooViewController, options, completion) in
+        return Transition(presentables: [presentable], animation: animation?.presentAnimation) { (rooViewController, options, completion) in
             presentable.viewConroller.modalPresentationStyle = .overFullScreen
             rooViewController.present(onRoot: true, presentable.viewConroller,
                                       animation: animation,

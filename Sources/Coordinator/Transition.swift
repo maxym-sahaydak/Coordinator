@@ -17,7 +17,7 @@ public struct Transition<RootViewController: UIViewController>: TransitionProtoc
 
     //MARK: - Lifecycle
 
-    public init(presentables: [Presentable], animation: Animation? = nil, performClosure: @escaping PerformClosure) {
+    public init(presentables: [Presentable], animation: UIViewControllerAnimatedTransitioning? = nil, performClosure: @escaping PerformClosure) {
         self.presentables = presentables
         self.animation = animation
         self.performClosure = performClosure
@@ -26,14 +26,10 @@ public struct Transition<RootViewController: UIViewController>: TransitionProtoc
     //MARK: - Private
 
     private var presentables: [Presentable]
-    private var animation: Animation?
+    private var animation: UIViewControllerAnimatedTransitioning?
     private var performClosure: PerformClosure
 
     public func perform(on rootViewController: RootViewController, options: TransitionOptions = .default, completion: NavigationHandler? = nil) {
-        self.performClosure(rootViewController, options, completion)
-    }
-
-    public func perform(for rootViewController: RootViewController, with options: TransitionOptions, completion: NavigationHandler?) {
         autoreleasepool {
             self.performClosure(rootViewController, options, completion)
         }
