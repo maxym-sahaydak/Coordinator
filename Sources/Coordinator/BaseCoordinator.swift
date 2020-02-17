@@ -9,17 +9,20 @@
 import Foundation
 import UIKit
 
-open class BaseCoordinator<StepType: Step, RooViewController: UIViewController>: Coordinator {
-    public var viewConroller: UIViewController!
 
+open class BaseCoordinator<StepType: Step, TransitionType: TransitionProtocol>: Coordinator {
+    
+    public typealias RootViewController = TransitionType.RootViewController
+
+    public var viewConroller: UIViewController!
 
     //MARK: - Initialization
 
-    public init(rootViewController: RooViewController) {
+    public init(rootViewController: RootViewController) {
         self.rootViewController = rootViewController
     }
 
-    public init(rootViewController: RooViewController, step: StepType) {
+    public init(rootViewController: RootViewController, step: StepType) {
         self.rootViewController = rootViewController
         performTransitionAfterWindowAppeared(transition(for: step))
     }
@@ -27,13 +30,13 @@ open class BaseCoordinator<StepType: Step, RooViewController: UIViewController>:
 
     //MARK: - Public
 
-    public private(set) var rootViewController: RooViewController
+    public private(set) var rootViewController: RootViewController
 
     public func navigate(to step: StepType) {
         fatalError("should be implemented in subclass")
     }
 
-    open func transition(for step: StepType) -> Transition<RooViewController> {
+    open func transition(for step: StepType) -> Transition<RootViewController> {
         fatalError("should be implemented in subclass")
     }
 
@@ -45,11 +48,9 @@ open class BaseCoordinator<StepType: Step, RooViewController: UIViewController>:
 
     //MARK: - Private
 
-    private func performTransitionAfterWindowAppeared(_ transition: Transition<RooViewController>) {
+    private func performTransitionAfterWindowAppeared(_ transition: Transition<RootViewController>) {
         guard !UIApplication.shared.windows.contains(where: { $0.isKeyWindow }) else {
-//            return performTransition(transition, with: TransitionOptions(animated: false))
-//            return navigate(to: ste)
-            return transition.perform(on: rootViewController, animated: true)
+            return transition.perform(on: rootViewController, completion: nil)
         }
 
         var windowAppearanceObserver: Any?
@@ -59,8 +60,7 @@ open class BaseCoordinator<StepType: Step, RooViewController: UIViewController>:
             windowAppearanceObserver.map(NotificationCenter.default.removeObserver)
             windowAppearanceObserver = nil
             DispatchQueue.main.async {
-                transition.perform(on: self?.rootViewController ?? .init(), animated: true)
-//                self?.performTransition(transition, with: TransitionOptions(animated: false))
+                transition.perform(on: self?.rootViewController ?? .init(), completion: nil)
             }
         }
     }

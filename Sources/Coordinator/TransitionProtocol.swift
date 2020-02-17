@@ -11,11 +11,11 @@ import UIKit
 
 /// Base protocol to implement any transitions
 
-protocol TransitionProtocol {
+public protocol TransitionProtocol {
 
 /// Type of viewController which will execute transition
     associatedtype RootViewController: UIViewController
 
 
-    func perform(on rootViewController: RootViewController, animated: Bool)
+    func perform(on rootViewController: RootViewController, options: TransitionOptions, completion: NavigationHandler?)
 }

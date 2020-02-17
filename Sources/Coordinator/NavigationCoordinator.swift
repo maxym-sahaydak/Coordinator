@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-open class NavigationCoordinator<StepType: Step>: BaseCoordinator<StepType, UINavigationController> {
+open class NavigationCoordinator<StepType: Step>: BaseCoordinator<StepType, NavigationTransition> {
 
     public override init(rootViewController: UINavigationController = .init()) {
         if rootViewController.delegate == nil {
@@ -38,10 +38,10 @@ open class NavigationCoordinator<StepType: Step>: BaseCoordinator<StepType, UINa
 
     //MAKR: -
 
-    public override func navigate(to step: StepType) {
-        let transition = self.transition(for: step)
-        transition.perform(for: rootViewController, with: nil) {
-            print("\(#function)")
+        public override func navigate(to step: StepType) {
+            let transition = self.transition(for: step)
+            transition.perform(on: rootViewController)
         }
-    }
 }
+
+

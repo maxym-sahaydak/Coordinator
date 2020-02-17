@@ -11,17 +11,13 @@ import UIKit
 
 public typealias NavigationHandler = () -> Void
 
-public protocol Coordinator: Presentable {
+public protocol Coordinator: TransitionPerformer {
 
     associatedtype StepType = Step
 
     //MARK: - Public
 
     func navigate(to step: StepType)
-
-    //MARRK: - Open
-
-//    func transition(for step: StepType) -> Transition<UIViewController>
 
 }
 
@@ -33,7 +29,15 @@ extension Coordinator {
 
     public var viewConroller: UIViewController! {
         fatalError("need to be inplemented in transition performer ...")
-        UIViewController.init()
+       return UIViewController.init()
     }
 }
 
+extension Coordinator where Self: AnyObject {
+
+    public func performTransition(_ transition: TransitionType, options: TransitionOptions, completion: NavigationHandler? = nil) {
+        transition.perform(on: rootViewController, options: options) {
+            completion?()
+        }
+    }
+}
