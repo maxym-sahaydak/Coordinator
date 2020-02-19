@@ -12,48 +12,41 @@ extension Transition {
 
     public static func show(_ presentable: Presentable) -> Self {
         return Transition(presentables: [presentable], animation: nil) { (rootViewController, animation, completion) in
-            rootViewController.show(presentable.viewConroller, options: .default, completion: completion)
+            rootViewController.show(presentable.viewConroller,
+                                    options: .default,
+                                    completion: completion)
         }
     }
 
     public static func presentOverFullScreen(_ presentable: Presentable, animation: Animation? = nil) -> Self {
-        return Transition(presentables: [presentable], animation: animation?.presentAnimation) { (rooViewController, options, completion) in
+        return Transition(presentables: [presentable], animation: animation?.presentAnimation) { (rootViewController, options, completion) in
             presentable.viewConroller.modalPresentationStyle = .overFullScreen
-            rooViewController.present(onRoot: true, presentable.viewConroller,
+            rootViewController.present(onRoot: true, presentable.viewConroller,
                                       animation: animation,
                                       options: options,
                                       completion: completion)
         }
     }
+
+    public static func present(_ presentable: Presentable, animation: Animation? = nil) -> Self {
+        return Transition(presentables: [presentable], animation: animation?.presentAnimation) { (rootViewController, options, completion) in
+            rootViewController.present(onRoot: true, presentable.viewConroller,
+                                      animation: animation,
+                                      options: options,
+                                      completion: completion)
+        }
+    }
+
+    public static func dismiss(animation: Animation? = nil) -> Self {
+        return Transition(presentables: [], animation: animation?.dissmissAnimation) { (rootViewController, options, completion) in
+            rootViewController.dismiss(toRoot: false,
+                                       options: options,
+                                       animation: animation,
+                                       completion: completion)
+        }
+    }
+
+    // TODO: - Add dissmiss
 }
 
-//extension Transition where RootViewController: UIViewController {
-//
-//    public static func show(_ viewController: UIViewController) -> Self {
-//        return Transition(presentables: [viewController], animation: nil) { (rootViewController, nil, completion) in
-//            rootViewController.show(viewController, sender: nil)
-//            completion?()
-//        }
-//    }
-//
-//    public static func present(_ viewController: UIViewController, animation: Animation? = nil) -> Self {
-//        return Transition(presentables: [viewController], animation: nil) { (rootViewController, animation, completion) in
-//            rootViewController.present(viewController, animated: true, completion: completion)
-//        }
-//    }
-//
-//    public static func presentOverFullScreen(_ viewConroller: UIViewController, animation: Animation? = nil) -> Self {
-//        return Transition(presentables: [viewConroller], animation: animation) { (rooViewController, animation, completion) in
-//            viewConroller.modalPresentationStyle = .overFullScreen
-//            rooViewController.present(viewConroller, animated: true, completion: completion)
-//        }
-//    }
-//
-//    public static func dismiss(_ animated: Bool = false, completion: NavigationHandler?) -> Self {
-//        return Transition(presentables: [], animation: nil) { (rooViewController, nil, completion) in
-//            rooViewController.viewConroller.dismiss(animated: animated, completion: completion)
-//        }
-//    }
-//
-//
-//}
+
