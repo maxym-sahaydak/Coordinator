@@ -30,10 +30,21 @@ extension Transition {
 
     public static func present(_ presentable: Presentable, animation: Animation? = nil) -> Self {
         return Transition(presentables: [presentable], animation: animation?.presentAnimation) { (rootViewController, options, completion) in
-            rootViewController.present(onRoot: true, presentable.viewConroller,
+            rootViewController.present(onRoot: false,
+                                       presentable.viewConroller,
                                       animation: animation,
                                       options: options,
                                       completion: completion)
+        }
+    }
+
+    public static func presentOnRoot(_ presentable: Presentable, animation: Animation? = nil) -> Self {
+        return Transition(presentables: [presentable], animation: animation?.presentAnimation) { (rootViewController, options, completion) in
+            rootViewController.present(onRoot: true,
+                                       presentable.viewConroller,
+                                       animation: animation,
+                                       options: options,
+                                       completion: completion)
         }
     }
 
