@@ -55,6 +55,12 @@ open class TransitionAnimator: UIPercentDrivenInteractiveTransition, UIViewContr
     open func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         interruptibleAnimator(using: transitionContext).startAnimation()
     }
+
+    public func animationEnded(_ transitionCompleted: Bool) {
+        if transitionCompleted {
+            animatorForCurrentTransition = nil
+        }
+    }
     
     open override func update(_ percentComplete: CGFloat) {
         print("percentComplete:  \(percentComplete)")
