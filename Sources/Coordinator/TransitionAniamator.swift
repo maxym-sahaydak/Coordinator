@@ -29,12 +29,12 @@ open class TransitionAnimator: UIPercentDrivenInteractiveTransition, UIViewContr
     }
 
     public override func finish() {
-        animatorForCurrentTransition = nil
+//        animatorForCurrentTransition = nil
         super.finish()
     }
 
     public override func cancel() {
-        animatorForCurrentTransition = nil
+//        animatorForCurrentTransition = nil
         super.cancel()
     }
 
